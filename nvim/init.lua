@@ -78,6 +78,14 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- autosave after edits, except for special buffers and unnamed files
+vim.api.nvim_create_autocmd({ 'InsertLeave', 'FocusLost' }, {
+  pattern = '*',
+  callback = function()
+    if vim.bo.modified and vim.bo.buftype == '' and vim.fn.expand '%' ~= '' then vim.cmd 'silent write' end
+  end,
+})
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
