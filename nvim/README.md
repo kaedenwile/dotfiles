@@ -2,6 +2,14 @@
 
 This is Kaeden's nvim config, based on kickstart.nvm.
 
+## Getting started
+
+Clone this repo, then create a symlink:
+
+```sh
+ln -s ~/path/to/your/repo/nvim ~/.config/nvim
+```
+
 ## Local Overrides
 
 You can configure local overrides without editing shared files, to avoid merge conflicts.
