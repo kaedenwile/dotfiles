@@ -1,0 +1,38 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+$all\
+$fill\
+$time\
+$line_break\
+$character\
+"""
+
+# Disabled
+aws.disabled = true
+gradle.disabled = true
+kotlin.disabled = true
+package.disabled = true
+
+[character]
+success_symbol = "[|>](bold green)"
+error_symbol = "[|>](bold red)"
+
+# Create a right-hand prompt
+[fill]
+symbol = " "
+style = ""
+
+[git_branch]
+ignore_branches = ["main", "mainline", "master"]
+format = '[$symbol$branch]($style)'
+style = "purple"
+
+[time]
+disabled = false
+format = '[$time]($style) '
+style = 'dimmed white'
+utc_time_offset = "local"
